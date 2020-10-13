@@ -78,7 +78,7 @@ function getCommentsById($archive, $flag='index', $limit = 5) {
 function parseContent($archive) {
 	//输出文本
 	echo '<div class="dynamic-content-text">';
-	echo strip_tags($archive->content);
+	echo strip_tags($archive->content,"<br>");
 	echo '</div>';
 	
 	//先判断是普通文章还是视频文章
