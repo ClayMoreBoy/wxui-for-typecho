@@ -65,14 +65,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 					}
 					?>
                     </div>
-					<!--底部信息-->
-					<section class="weui-cells footer">
-						<div class="weui-footer" style="background-color:#FFFFFF">
-							<br>
-							<p class="weui-footer__text" style="margin-top: 0.5rem"><?php $this->options->footerInfo() ?></p>
-							<br>
-						</div>
-					</section>
 				</main>
 			</div>
 		</div>
