@@ -24,7 +24,7 @@
 							<article class="content data-<?php echo $this->cid?>">
 								<h5><?php $this->author(); ?></h5>
 								<section class="dynamic-content">
-								<?php parseContent($this); ?>
+								<?php parseContent($this,'post'); ?>
 								</section>
 								<div class="share-bottom">
 									<span class="time"><?php echo parseContentTime($this->date->timeStamp); ?></span>
