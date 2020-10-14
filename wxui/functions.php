@@ -82,9 +82,9 @@ function parseContent($archive, $flag='index') {
 	if($flag=='post') {
 	    echo strip_tags($archive->content,"<br>");
 	} else {
-	    $len = mb_strlen($archive->content,'utf-8');
-	    if($len > 250) {
-	        echo strip_tags(mb_substr($archive->content,3,250,'utf-8'),'<br>');
+	    $len = mb_strlen(strip_tags($archive->content,'<br>'),'utf-8');
+	    if($len > 120) {
+	        echo mb_substr(strip_tags($archive->content,'<br>'),3,120,'utf-8');
 	        echo '...<br><span class="reply-other" style="color:rgb(108,115,160)">查看全部</span>';
 	    } else {
 	        echo strip_tags($archive->content,"<br>");
