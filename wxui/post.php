@@ -50,7 +50,6 @@
 				<?php $this->need('menus.php'); ?>
 			</div>
 		</div>
-		<?php include('footer.php'); ?>
 	</div>
 	<?php include('footjs.php'); ?>
 </body>
