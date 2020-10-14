@@ -75,10 +75,16 @@ function getCommentsById($archive, $flag='index', $limit = 5) {
 }
 
 //文章输出处理
-function parseContent($archive) {
+function parseContent($archive, $flag='index') {
 	//输出文本
 	echo '<div class="dynamic-content-text">';
-	echo strip_tags($archive->content,"<br>");
+	$archive->content = str_replace ("<br><img", "<img", $archive->content);
+	if($flag=='post') {
+	    echo strip_tags($archive->content,"<br>");
+	} else {
+	    echo strip_tags($archive->excerpt(200, '...<br><span class="reply-other" style="color:rgb(108,115,160)">查看全部</span>'),"<br>");
+	}
+	
 	echo '</div>';
 	
 	//先判断是普通文章还是视频文章
@@ -261,4 +267,3 @@ function ajaxComment($archive){
     );
     $archive->response->throwJson(array('status'=>1,'comment'=>$data));
 }
-
