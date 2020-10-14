@@ -82,7 +82,13 @@ function parseContent($archive, $flag='index') {
 	if($flag=='post') {
 	    echo strip_tags($archive->content,"<br>");
 	} else {
-	    echo strip_tags($archive->excerpt(200, '...<br><span class="reply-other" style="color:rgb(108,115,160)">查看全部</span>'),"<br>");
+	    $len = mb_strlen($archive->content,'utf-8');
+	    if($len > 250) {
+	        echo strip_tags(mb_substr($archive->content,3,250,'utf-8'),'<br>');
+	        echo '...<br><span class="reply-other" style="color:rgb(108,115,160)">查看全部</span>';
+	    } else {
+	        echo strip_tags($archive->content,"<br>");
+	    }
 	}
 	
 	echo '</div>';
@@ -267,3 +273,4 @@ function ajaxComment($archive){
     );
     $archive->response->throwJson(array('status'=>1,'comment'=>$data));
 }
+
