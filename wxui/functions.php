@@ -127,7 +127,7 @@ function parseContent($archive, $flag='index') {
 			echo '<div class="row items-push js-gallery img-fluid-100"><ul class="imglist imglist9 animated fadeIn">';
 			for($i = 0; $i < count($content); $i++) {
 				echo '<li><figure><a class="img-link img-link-zoom-in img-thumb img-lightbox" href="'.$content[$i].'"><img src="'.$content[$i].'" class="li-img img-fluid"></a></figure></li>';
-				if($i >= 9) {
+				if($i >= 8) {
     			    break;
     			}
 			}
